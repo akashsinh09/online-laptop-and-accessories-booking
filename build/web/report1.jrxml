@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="98a1ab9b-1f4c-4d61-ac71-6918e5221eb2">
+	<property name="ireport.zoom" value="2.143588810000003"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     feedback.`name` AS feedback_name,
+     feedback.`email` AS feedback_email,
+     feedback.`mobile_no` AS feedback_mobile_no,
+     feedback.`message` AS feedback_message
+FROM
+     `feedback` feedback]]>
+	</queryString>
+	<field name="feedback_name" class="java.lang.String"/>
+	<field name="feedback_email" class="java.lang.String"/>
+	<field name="feedback_mobile_no" class="java.math.BigInteger"/>
+	<field name="feedback_message" class="java.lang.String"/>
+	<group name="feedback_name">
+		<groupExpression><![CDATA[$F{feedback_name}]]></groupExpression>
+		<groupHeader>
+			<band height="37">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="176" height="24" forecolor="#CC0000" uuid="01f117dd-0586-4316-af42-cb8e776ed6c2"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedback_name}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="442eef7d-8955-495c-bdc8-7f5b1039d763"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="24"/>
+		</groupFooter>
+	</group>
+	<group name="feedback_email">
+		<groupExpression><![CDATA[$F{feedback_email}]]></groupExpression>
+		<groupHeader>
+			<band height="15"/>
+		</groupHeader>
+	</group>
+	<group name="feedback_mobile_no">
+		<groupExpression><![CDATA[$F{feedback_mobile_no}]]></groupExpression>
+	</group>
+	<group name="feedback_message">
+		<groupExpression><![CDATA[$F{feedback_message}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="057999d2-8454-4596-88b3-3783dbe0b576"/>
+				<imageExpression><![CDATA["leaf_banner_red.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="433" height="33" uuid="1cc8cebb-9303-49ec-b3a6-a7b3c1207208"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Laptops And Accessories Booking]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="117" y="46" width="157" height="22" uuid="410dd5eb-7cb7-456b-bd5c-cd3d34b0d3a5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Feedback Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="4a0a11fb-314f-4deb-91af-31b3dbb96d89"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21">
+			<textField>
+				<reportElement style="SubTitle" x="0" y="1" width="460" height="20" uuid="9853531e-86b6-4108-bd3d-859c64702304"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{feedback_mobile_no}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" uuid="6ff5c8bc-ba7b-4de4-a4eb-8ba2078c5fc7"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="21">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="556" height="1" uuid="93e66428-d322-48e5-ac22-971242f29660"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="SubTitle" x="0" y="1" width="460" height="20" uuid="df56bf3d-16d9-46ea-a0da-11397ee1b6d8"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{feedback_email}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="84" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" uuid="addf220a-df30-4877-93bb-0fc6a17969e3"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="SubTitle" x="0" y="1" width="553" height="82" uuid="c594d9a5-2420-4f9b-884c-d593c410a214"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{feedback_message}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="83" width="555" height="1" uuid="7b0d5606-b632-4f1e-8234-017c85bc827e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="4" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="cc4a791f-5c17-4534-a84d-9f0fda622b64"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="8207c938-db62-4d1a-9787-7fe34bf0fa54"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="aca7f4b4-0d47-402b-8cce-0dec40b5f10e"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="54d3faf8-cd3b-46da-a222-032df5b81982"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

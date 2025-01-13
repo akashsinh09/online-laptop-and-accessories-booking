@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dcc0f857-0ef3-4eb9-976a-4b3d19cfc530">
+	<property name="ireport.zoom" value="2.1435888100000016"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="122"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     add_accessories_info.`Id` AS add_accessories_info_Id,
+     add_accessories_info.`Company_Name` AS add_accessories_info_Company_Name,
+     add_accessories_info.`Accessoriess_Name` AS add_accessories_info_Accessoriess_Name,
+     add_accessories_info.`Image` AS add_accessories_info_Image,
+     add_accessories_info.`Price` AS add_accessories_info_Price,
+     add_accessories_info.`Warranty` AS add_accessories_info_Warranty
+FROM
+     `add_accessories_info` add_accessories_info]]>
+	</queryString>
+	<field name="add_accessories_info_Id" class="java.lang.Long"/>
+	<field name="add_accessories_info_Company_Name" class="java.lang.String"/>
+	<field name="add_accessories_info_Accessoriess_Name" class="java.lang.String"/>
+	<field name="add_accessories_info_Image" class="java.lang.String"/>
+	<field name="add_accessories_info_Price" class="java.lang.Long"/>
+	<field name="add_accessories_info_Warranty" class="java.lang.String"/>
+	<group name="add_accessories_info_Id">
+		<groupExpression><![CDATA[$F{add_accessories_info_Id}]]></groupExpression>
+		<groupHeader>
+			<band height="38">
+				<textField>
+					<reportElement style="SubTitle" x="0" y="0" width="44" height="24" forecolor="#333333" uuid="796efd47-8488-4c43-bb53-3066a8723106"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{add_accessories_info_Id}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="51" y="4" width="93" height="20" uuid="26b7493c-db1f-47f3-aa80-2b2d83efbfcb"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{add_accessories_info_Company_Name}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="293" y="0" width="127" height="24" forecolor="#333333" uuid="435332b5-5a5f-4041-9ab4-5fc5486d0ffb"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{add_accessories_info_Image}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="164" y="0" width="114" height="24" forecolor="#333333" uuid="404dca7e-16d6-4478-8e1e-e84568c7fd50"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{add_accessories_info_Accessoriess_Name}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="445" y="4" width="41" height="15" uuid="9bd86a51-73b8-46ae-8245-234dd671ab42"/>
+					<textFieldExpression><![CDATA[$F{add_accessories_info_Price}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="499" y="4" width="56" height="15" uuid="5b3bfbcd-a2bd-4b78-87c3-e8bf97468e13"/>
+					<textFieldExpression><![CDATA[$F{add_accessories_info_Warranty}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="add_accessories_info_Accessoriess_Name">
+		<groupExpression><![CDATA[$F{add_accessories_info_Accessoriess_Name}]]></groupExpression>
+	</group>
+	<group name="add_accessories_info_Image">
+		<groupExpression><![CDATA[$F{add_accessories_info_Image}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="555" height="70" uuid="af8c520e-e816-40f5-8d5f-66a3f0044e89"/>
+				<imageExpression><![CDATA["wood.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="51" y="0" width="446" height="33" uuid="171bf42d-5a60-4ec3-85bc-ffc43fc798f6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Laptops And Accessories Booking]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="131" y="33" width="232" height="21" forecolor="#FFFFFF" uuid="5ae475cc-fa6f-4f2e-b87a-64ff25c8bfcd"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Add Accessories info Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="445" y="13" width="41" height="15" uuid="2058a642-747e-4049-9a23-18b24f953ccd"/>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="36" y="8" width="95" height="15" uuid="2fb3e3ae-35c3-49bb-bda6-f8fcd18dd507"/>
+				<text><![CDATA[Company Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="164" y="8" width="111" height="15" uuid="1a2ad29e-2116-4829-a753-196f56983f58"/>
+				<text><![CDATA[Accessories Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="4" width="23" height="24" uuid="32100b7f-f10d-4597-b184-76fcf636c4c8"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="496" y="13" width="57" height="15" uuid="3de2c111-2074-471a-9fa7-443a5a4b93da"/>
+				<text><![CDATA[Warranty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="325" y="13" width="57" height="15" uuid="faa16fc9-3b66-4e8f-9120-ad8d4c2b2c46"/>
+				<text><![CDATA[Image]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="7496c799-7659-4a69-a607-90cb8234389f"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="09c46efe-e121-42d2-b45e-ca7660b6a7ac"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="5d01278a-c54c-468d-8c5d-10bccb506eb6"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

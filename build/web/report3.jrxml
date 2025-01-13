@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report3" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="79b2c72b-1f7d-4c3f-a62d-9f5a01d5d728">
+	<property name="ireport.zoom" value="2.357947691000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     confirm_laptop_order.`Order_No` AS confirm_laptop_order_Order_No,
+     confirm_laptop_order.`Order_Date` AS confirm_laptop_order_Order_Date,
+     confirm_laptop_order.`Company_Name` AS confirm_laptop_order_Company_Name,
+     confirm_laptop_order.`Material_Id` AS confirm_laptop_order_Material_Id,
+     confirm_laptop_order.`Description` AS confirm_laptop_order_Description,
+     confirm_laptop_order.`Warranty` AS confirm_laptop_order_Warranty,
+     confirm_laptop_order.`Image1` AS confirm_laptop_order_Image1,
+     confirm_laptop_order.`Color1` AS confirm_laptop_order_Color1,
+     confirm_laptop_order.`Price1` AS confirm_laptop_order_Price1,
+     confirm_laptop_order.`Name1` AS confirm_laptop_order_Name1,
+     confirm_laptop_order.`Address1` AS confirm_laptop_order_Address1,
+     confirm_laptop_order.`Mobile_No1` AS confirm_laptop_order_Mobile_No1,
+     confirm_laptop_order.`Pin_Code1` AS confirm_laptop_order_Pin_Code1
+FROM
+     `confirm_laptop_order` confirm_laptop_order]]>
+	</queryString>
+	<field name="confirm_laptop_order_Order_No" class="java.lang.Long"/>
+	<field name="confirm_laptop_order_Order_Date" class="java.lang.String"/>
+	<field name="confirm_laptop_order_Company_Name" class="java.lang.String"/>
+	<field name="confirm_laptop_order_Material_Id" class="java.lang.Long"/>
+	<field name="confirm_laptop_order_Description" class="java.lang.String"/>
+	<field name="confirm_laptop_order_Warranty" class="java.lang.String"/>
+	<field name="confirm_laptop_order_Image1" class="java.lang.String"/>
+	<field name="confirm_laptop_order_Color1" class="java.lang.String"/>
+	<field name="confirm_laptop_order_Price1" class="java.lang.Long"/>
+	<field name="confirm_laptop_order_Name1" class="java.lang.String"/>
+	<field name="confirm_laptop_order_Address1" class="java.lang.String"/>
+	<field name="confirm_laptop_order_Mobile_No1" class="java.math.BigInteger"/>
+	<field name="confirm_laptop_order_Pin_Code1" class="java.lang.Long"/>
+	<group name="confirm_laptop_order_Order_No">
+		<groupExpression><![CDATA[$F{confirm_laptop_order_Order_No}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#333333" uuid="d31c6de3-73de-480c-8911-8ca2386287fd"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confirm_laptop_order_Order_No}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="dfcec72d-d555-4318-80f1-eab41a63c54e"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<group name="confirm_laptop_order_Order_Date">
+		<groupExpression><![CDATA[$F{confirm_laptop_order_Order_Date}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<textField>
+					<reportElement style="SubTitle" x="0" y="4" width="460" height="20" uuid="0b365207-99cd-4c3c-8b22-8b697e3fc370"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confirm_laptop_order_Order_Date}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="confirm_laptop_order_Company_Name">
+		<groupExpression><![CDATA[$F{confirm_laptop_order_Company_Name}]]></groupExpression>
+	</group>
+	<group name="confirm_laptop_order_Material_Id">
+		<groupExpression><![CDATA[$F{confirm_laptop_order_Material_Id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="0" width="595" height="64" uuid="64136598-9099-4937-a284-334ee0e3ef78"/>
+				<imageExpression><![CDATA["wood.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="6" width="553" height="33" uuid="82aa139c-834e-4afc-9e37-955ff46b2587"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Laptops And Accessories Booking]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="124" y="39" width="242" height="22" forecolor="#FFFFFF" uuid="29cb32c3-0754-4137-9795-55c2f8b45121"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Confirm Laptop Order Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="be90e83a-834c-4540-affb-2659610086d8"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="197" height="15" uuid="06844485-ee08-402f-9eee-da84731ecab1"/>
+				<text><![CDATA[confirm_laptop_order_Description]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="cb977608-ff16-41cd-b730-e894f0aaa16c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="57" height="15" uuid="91ac6fdf-0e63-4e37-8540-58a963e1dbd9"/>
+				<textFieldExpression><![CDATA[$F{confirm_laptop_order_Description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="57" y="0" width="67" height="15" uuid="357165ad-d05b-44ca-b704-788a6e9c9454"/>
+				<textFieldExpression><![CDATA[$F{confirm_laptop_order_Image1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="137" y="0" width="48" height="15" uuid="a5831f19-6570-4264-9957-21872e1a5b0f"/>
+				<textFieldExpression><![CDATA[$F{confirm_laptop_order_Color1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="244" y="0" width="61" height="15" uuid="bdfcdb3d-2a92-43a9-b554-e7d6dacfdf13"/>
+				<textFieldExpression><![CDATA[$F{confirm_laptop_order_Price1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="305" y="0" width="61" height="15" uuid="972e911f-eef9-4f12-b921-c40fa201f4a7"/>
+				<textFieldExpression><![CDATA[$F{confirm_laptop_order_Name1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="366" y="0" width="115" height="15" uuid="6b6bbf7b-bc4f-4cfd-b7c9-43a0c77c895b"/>
+				<textFieldExpression><![CDATA[$F{confirm_laptop_order_Address1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="481" y="1" width="72" height="15" uuid="505b6157-2115-4c1b-9608-a01903a3518b"/>
+				<textFieldExpression><![CDATA[$F{confirm_laptop_order_Mobile_No1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="185" y="0" width="61" height="15" uuid="ff4bf413-74a7-4277-943b-41a27181d23e"/>
+				<textFieldExpression><![CDATA[$F{confirm_laptop_order_Warranty}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="b08f7efc-ce3e-4ba5-9e52-8b7c9c1aa626"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="775966eb-8bb4-41e6-8890-23e1fcbb5a71"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="b61c641f-78e4-411a-88a6-4bda15a6367f"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="9f3bedff-b7d4-43a1-8317-6183d099e620"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

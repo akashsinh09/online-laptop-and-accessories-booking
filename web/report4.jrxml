@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report4" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="52d91077-f61f-4c8d-8c50-8d1d5c811deb">
+	<property name="ireport.zoom" value="1.610510000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     payment.`Recepit_No` AS payment_Recepit_No,
+     payment.`Recepit_Date` AS payment_Recepit_Date,
+     payment.`Material_Name` AS payment_Material_Name,
+     payment.`Customer_Name` AS payment_Customer_Name,
+     payment.`Mobile_No` AS payment_Mobile_No,
+     payment.`Order_Date` AS payment_Order_Date,
+     payment.`Amount` AS payment_Amount
+FROM
+     `payment` payment]]>
+	</queryString>
+	<field name="payment_Recepit_No" class="java.lang.Long"/>
+	<field name="payment_Recepit_Date" class="java.lang.String"/>
+	<field name="payment_Material_Name" class="java.lang.String"/>
+	<field name="payment_Customer_Name" class="java.lang.String"/>
+	<field name="payment_Mobile_No" class="java.math.BigInteger"/>
+	<field name="payment_Order_Date" class="java.lang.String"/>
+	<field name="payment_Amount" class="java.lang.Long"/>
+	<group name="payment_Recepit_Date">
+		<groupExpression><![CDATA[$F{payment_Recepit_Date}]]></groupExpression>
+		<groupHeader>
+			<band height="67">
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="509" y="2" width="155" height="18" uuid="7b64f0dd-8f8f-4700-9f92-45c04af30560"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{payment_Order_Date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="664" y="2" width="138" height="18" uuid="46f114dd-d67c-412d-b648-61f094a82cbe"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{payment_Amount}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="146" y="2" width="210" height="26" forecolor="#000000" uuid="ff57b86d-0c56-49fd-ac99-685a60b3375a"/>
+					<textElement>
+						<font fontName="Times New Roman" size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{payment_Customer_Name}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="0" y="2" width="146" height="26" forecolor="#000000" uuid="91bf69a9-43e6-4557-ad72-2b0d14b0b170"/>
+					<textElement>
+						<font fontName="Times New Roman" size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{payment_Material_Name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="356" y="2" width="153" height="26" uuid="85a66f88-03f3-4d53-a61c-a2ff2faa4f8b"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{payment_Mobile_No}]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement mode="Opaque" x="4" y="28" width="721" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="53f63891-a0ec-45c0-b4fb-045478b2abb1"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement style="SubTitle" x="2" y="0" width="695" height="24" forecolor="#FFFFFF" uuid="1b522877-5d61-45a7-803f-f560b21b52bb"/>
+						<textElement>
+							<font isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{payment_Recepit_No}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<rectangle>
+					<reportElement x="725" y="28" width="77" height="24" backcolor="#666666" uuid="8dcabb20-10c6-4877-a288-9a287879b4f1"/>
+					<graphicElement>
+						<pen lineWidth="0.0"/>
+					</graphicElement>
+				</rectangle>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="payment_Material_Name">
+		<groupExpression><![CDATA[$F{payment_Material_Name}]]></groupExpression>
+	</group>
+	<group name="payment_Customer_Name">
+		<groupExpression><![CDATA[$F{payment_Customer_Name}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="125" splitType="Stretch">
+			<image>
+				<reportElement x="725" y="0" width="77" height="102" uuid="09a3ab25-5d9d-4177-9403-1bd27c8d3249"/>
+				<imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="721" height="66" backcolor="#000000" uuid="8bc114ad-cc2b-4829-8e4b-ad2a2a60285f"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="721" height="66" uuid="186b1362-89f6-4896-85bd-a421226ccbc3"/>
+					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+					<textElement verticalAlignment="Bottom">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Laptops And Accessoris Booking]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="70" width="721" height="32" forecolor="#000000" backcolor="#CC0000" uuid="2fba6f52-e5ce-44ff-bcfe-924d5aa898b7"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="7b44821e-f22e-4575-8c3c-2bd1acd20cd5"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="SubTitle" x="0" y="3" width="168" height="29" uuid="8b875953-1ecf-43f8-884f-d2c95a528aa4"/>
+					<textElement textAlignment="Right">
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Payment Report]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="86" height="18" forecolor="#000000" uuid="ea7ea4f6-f086-41fd-b362-3d50db11e915"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Material Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="146" y="0" width="95" height="18" forecolor="#000000" uuid="babc8932-c3df-4a37-b96c-2632f161065b"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="356" y="0" width="62" height="18" forecolor="#000000" uuid="bde44a46-82a4-4c02-a8cc-5ba063e21bc9"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Mobile No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="509" y="0" width="82" height="18" forecolor="#000000" uuid="3866e306-0abd-4dc4-9acf-552d4fd211c4"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Payment Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="664" y="0" width="62" height="18" forecolor="#000000" uuid="994e7f7c-8dda-4557-9972-3dcce8d0865a"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="c7a21597-c1f3-4173-9353-5a92dbdde7a4"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="c626457b-9af3-49ac-813b-9da046b44ea0"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="ca59e981-d5fb-4edd-8007-a6592ba6588a"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="6da3d1bd-5f56-4d7f-9944-4541d2f0599b"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
